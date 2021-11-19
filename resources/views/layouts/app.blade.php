@@ -33,22 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav  mr-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-                     </li>
-                     <li class="nav-item">
-                          <a class="nav-link" href="profil">Profil</a>
-                         </li>
-                         <li class="nav-item">
-                          <a class="nav-link" href="menu">Menu</a>
-                         </li>
-                         <li class="nav-item active">
-        <a class="nav-link" href="commande">Commande <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="panier">Panier<span class="sr-only">(current)</span></a>
-      </li>
-                    </ul>
+                      </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
