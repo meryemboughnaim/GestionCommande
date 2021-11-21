@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('home')
 @section('content')
-<p> panier</p>
+<p>panier</p>
 @endsection

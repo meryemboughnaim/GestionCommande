@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PanierController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\CommandeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +19,14 @@ use App\Http\Controllers\MenuController;
 Route::resource('/menu', MenuController::class);
 Route::resource('/panier', PanierController::class);
 Route::resource('/profil', ProfilController::class);
+Route::resource('/products', ProductController::class);
 Route::resource('/commande', CommandeController::class);
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
 });
-
+Route::get('/products.view', function () {
+    return view('products.view');
+});
 
 Auth::routes();
 

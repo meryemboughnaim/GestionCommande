@@ -1,5 +1,4 @@
-@extends('layouts.app')
-
+@extends('home')
 @section('content')
-<p> profil</p>
+<p>profil</p>
 @endsection
