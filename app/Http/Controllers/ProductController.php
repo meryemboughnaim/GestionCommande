@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     /**
@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products= Product::all();
+        $products= Product::orderBy('id','desc')->paginate(5);
         return view("products.products",compact("products"));
     }
 
@@ -37,6 +37,35 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        if($request->photo){
+            // $request->photo->validate([
+    
+            //     'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            // ]);
+            $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('assets/images'),$imageName);
+            }
+    
+        Product::create([
+            'labe'=>$request->labe,
+            
+            'description'=>$request->description,
+            'price'=>$request->price,
+           
+            'photo'=>$imageName,
+
+        ]);
+        return redirect()->route('products.index');
+        // $request->photo->validate([
+
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        // ]);
+        // $imageName = time().'.'.$request->photo->extension();
+        
+        // $request->photo->move(public_path('assets/images'),$imageName);
+
     }
 
     /**

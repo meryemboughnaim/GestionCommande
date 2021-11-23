@@ -11,7 +11,54 @@
 @extends('home')
 
 @section('content')
+<div class="text-right">
+<button class="btn btn-outline-primary" data-toggle="modal" data-target="#productadd"  >Ajouter</button>
+</div>
+<!-- add product -->
+<div class="modal fade" id="productadd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{url('products')}}" method="POST"  enctype="multipart/form-data">
+        @csrf
+      <div class="modal-body">
+      
+  <div class="form-group">
+    <label for="exampleInputEmail1">Product name :</label>
+    <input type="text" class="form-control" name="labe" id="label"  placeholder="Enter product name">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Picture</label>
+    <input type="file" class="form-control-file" name="photo" id="photo">
+  </div>
 
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <textarea  class="form-control" id="description" name="description" placeholder="Enter description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Price</label>
+    <input type="number" class="form-control" id="price" name="price"  placeholder="Enter price">
+  </div>
+ 
+  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit"  class="btn btn-primary">Add</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- end add product -->
+<!-- search -->
 <div class="ibox-content m-b-sm border-bottom">
                 <div class="row">
                     <div class="col-sm-4">
@@ -42,6 +89,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- end search -->
+                <!-- affichage -->
                 <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox">
@@ -78,12 +127,58 @@
                                     <td class="text-right footable-visible footable-last-column">
                                         <div class="btn-group">
                                             <a href="products/{{$item->id}}" class="btn btn-primary btn-xs">View</a>
-                                            <a class="btn btn-secondary btn-xs"  >Edit</a>
+                                            <a class="btn btn-outline-secondary btn-xs" data-toggle="modal" data-target="#productedit"  >Edit</a>
                                         </div>
                                     </td>
                                 </tr>
-                               
                                 @endforeach
+                                
+                                <!-- end affichage -->
+                                <!-- edit product -->
+        <div class="modal fade" id="productedit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  
+                                <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Edit Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{url('products')}}" method="POST" enctype="multipart/form-data">
+      <div class="modal-body">
+      
+  <div class="form-group">
+    <label for="exampleInputEmail1">Product name :</label>
+    <input type="email" class="form-control" id="name"  placeholder="Enter product name">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Picture</label>
+    <input type="file" class="form-control-file" id="photo">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <textarea  class="form-control" id="description"  placeholder="Enter description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Price</label>
+    <input type="number" class="form-control" id="price"  placeholder="Enter price">
+  </div>
+ 
+  
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a type="button"  class="btn btn-primary">Edit</a>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- end edit product -->
+   
 
                                 </tbody>
                                 <tfoot>
@@ -92,13 +187,13 @@
                                 </tr>
                                 </tfoot>
                             </table>
-
+                            
                         </div>
                     </div>
                 </div>
             </div>
             </div>
-           
+            
 @endsection
 </body>
 </html>

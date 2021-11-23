@@ -6,7 +6,8 @@
                             <div class="row">
                                 <div class="col-md-5">
 @if(isset($product->photo))
-{{$product->photo}}
+
+<img src="assets/images/{{$product->photo}}">
                @endif                 
                                 </div>
                                 <div class="col-md-7">

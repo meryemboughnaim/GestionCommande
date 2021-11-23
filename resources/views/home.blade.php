@@ -18,7 +18,7 @@
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url('/assets/images/logo.jpg');"></a>
           
 	        <ul class="list-unstyled components mb-5">
-	          <li class="active">
+	          <li  class="active" >
 	            <a href="/home"  >Home</a>
 	          
 	          </li>
