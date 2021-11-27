@@ -24,12 +24,12 @@ Route::resource('/commande', CommandeController::class);
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/products.view', function () {
-    return view('products.view');
-});
-Route::get('/profil.profil', function () {
-    return view('profil.profil');
-});
+// Route::get('/products.view', function () {
+//     return view('products.view');
+// });
+// Route::get('/profil.profil', function () {
+//     return view('profil.profil');
+// });
 
 Auth::routes();
 

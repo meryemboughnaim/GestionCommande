@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'tel',
+        'phone',
+        'photo',
         'adresse',
     ];
     public function orderUser()

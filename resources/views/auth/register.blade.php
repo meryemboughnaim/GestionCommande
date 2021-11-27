@@ -28,7 +28,7 @@
                             <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tel" type="text" class="form-control @error('tel') is-invalid @enderror" name="tel" value="{{ old('tel') }}" required autocomplete="tel" autofocus>
+                                <input id="tel" type="text" class="form-control @error('tel') is-invalid @enderror" name="phone" value="{{ old('tel') }}"  autocomplete="tel" autofocus>
 
                                 @error('tel')
                                     <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                  <textarea class="form-control" name="adress" id="adress" rows="3"></textarea>
+                                  <textarea class="form-control" name="adresse" id="adresse" rows="3"></textarea>
                                 </div> 
                                 @error('adress')
                                     <span class="invalid-feedback" role="alert">

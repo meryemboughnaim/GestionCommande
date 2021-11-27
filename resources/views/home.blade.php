@@ -252,11 +252,9 @@ img {
               <a href="{{url('/menu')}}">Menu</a>
 	          </li>
 	          <li>
-              <a href="{{url('/profil.profil')}}">Profil</a>
+              <a href="{{url('/profil')}}">Profil</a>
 	          </li>
-            <li>
-              <a href="{{url('/profil.profil')}}">Profil</a>
-	          </li>
+          
 	        </ul>
 
 	        <div class="footer">
@@ -338,6 +336,9 @@ img {
       </div>
 		</div>
   
+    
+    
+    
     <script src="{{url('assets/js/jquery.min.js')}}"></script>
     <script src="{{url('assets/js/popper.js')}}"></script>
     <script src="{{url('assets/js/bootstrap.min.js')}}"></script>
