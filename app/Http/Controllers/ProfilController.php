@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ProfilController extends Controller
 {
@@ -14,7 +15,8 @@ class ProfilController extends Controller
     public function index()
     {
         //
-        return view('profil/profil');
+        
+       
     }
 
     /**
@@ -36,6 +38,8 @@ class ProfilController extends Controller
     public function store(Request $request)
     {
         //
+        $user = User::find($id);
+        return view('profil.store',compact('user'));
     }
 
     /**
@@ -47,6 +51,8 @@ class ProfilController extends Controller
     public function show($id)
     {
         //
+        
+       
     }
 
     /**

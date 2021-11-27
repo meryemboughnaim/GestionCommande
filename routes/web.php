@@ -27,6 +27,9 @@ Route::get('/home', function () {
 Route::get('/products.view', function () {
     return view('products.view');
 });
+Route::get('/profil.profil', function () {
+    return view('profil.profil');
+});
 
 Auth::routes();
 
