@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class CommandeController extends Controller
@@ -14,7 +15,11 @@ class CommandeController extends Controller
     public function index()
     {
         //
-        return view('commande/commande');
+        $order=Order::all();
+      
+      
+        
+        return view('commande/commande',compact('order'));
     }
 
     /**

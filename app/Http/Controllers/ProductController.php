@@ -82,8 +82,18 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
-        $product=Product::find($id);
-        return view('products',compact('product'));
+        try{
+            DB::beginTransaction();
+            $product = Product::findOrfail($id);
+            DB::commit();
+            return response()->json($product, 200);
+        }catch (\Exception $e){
+            DB::rollBack();
+            $response['status']     = 'warning';
+            $response['title']      = 'Attention';
+            $response['message']    = 'Circuit doesn\'t existe ! ...';
+            return response()->json($response, 500);
+        }
     }
 
     /**
@@ -96,6 +106,14 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $user = Product::findOrfail($id);
+        $user->update([
+            'labe'  =>  $request->name_p,
+            'description'  =>  $request->description_p,
+            'price'  =>  $request->price_p,
+        ]);
+        return  redirect()->route('products.index');
+
     }
 
     /**

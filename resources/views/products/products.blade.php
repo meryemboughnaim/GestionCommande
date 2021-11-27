@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
-</head>
-<body>
 @extends('home')
 
 @section('content')
@@ -114,7 +105,7 @@
                                     <td class="text-right footable-visible footable-last-column">
                                         <div class="btn-group">
                                             <a href="products/{{$item->id}}" class="btn btn-primary btn-xs">View</a>
-                                            <a class="btn btn-outline-secondary btn-xs" href="products/{{$item->id}}" data-toggle="modal" data-target="#productedit"  >Edit</a>
+                                            <a class="btn btn-outline-secondary btn-xs" href="javascript:editProduct({{$item->id}})"  >Edit</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -132,25 +123,28 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="{{url('products')}}" method="POST" enctype="multipart/form-data">
+      <form action="" method="POST" id="form_product_update" enctype="multipart/form-data">
+        @method('PUT')
+        @csrf
       <div class="modal-body">
       
   <div class="form-group">
+  <input type="hidden"  name="id" id="product_id">
     <label for="exampleInputEmail1">Product name :</label>
-    <input type="email" class="form-control" id="name"  placeholder="Enter product name">
+    <input type="text" class="form-control" id="name" name="name_p"  placeholder="Enter product name">
   </div>
   <div class="form-group">
     <label for="exampleFormControlFile1">Picture</label>
-    <input type="file" class="form-control-file" id="photo">
+    <input type="file" class="form-control-file" id="photo_p" name="photo_p">
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
-    <textarea  class="form-control" id="description"  placeholder="Enter description"></textarea>
+    <textarea  class="form-control" id="description_p" name="description_p"  placeholder="Enter description"></textarea>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Price</label>
-    <input type="number" class="form-control" id="price"  placeholder="Enter price">
+    <input type="number" class="form-control" id="price_p" name="price_p"  placeholder="Enter price">
   </div>
  
   
@@ -158,7 +152,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a type="button"  class="btn btn-primary">Edit</a>
+        <a  href="javascript:updateProduct()"  class="btn btn-primary">Edit</a>
       </div>
       </form>
     </div>
@@ -180,7 +174,9 @@
                 </div>
             </div>
             </div>
-            
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+            <script src="/js/script.js" />
 @endsection
-</body>
-</html>
+

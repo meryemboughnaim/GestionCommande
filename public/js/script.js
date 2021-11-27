@@ -1,4 +1,4 @@
-
+// user
 function editUser(id)
 {
     
@@ -15,9 +15,9 @@ function editUser(id)
             $("#email").val(result.email);
             $("#phone").val(result.phone);
             $("#adresse").val(result.adresse);
+            $("#user_id").val(result.id);
         },
         error: function(result,status,error) {
-            swal("Erreur", "Quelque chose s'est mal passé. Veuillez réessayer ou contactez IT! \n"+result.status+" "+result.statusText+"\n\n"+result.responseText, "error");
         },
 
     });
@@ -29,5 +29,39 @@ function updateUser()
    
                 $("#form_user_update").submit();
                 var data = $("#form_user_update").serialize();
+         
+}
+// product 
+
+function editProduct(id)
+{
+    
+    $.ajax({
+        url: "products/"+id+"/edit",
+        type: "GET",
+        contentType:'false',
+        processData:'false',
+        cache:'false',
+        success: function(result,status) {
+            $("#productedit").modal("show");
+            $("#form_product_update").attr('action', '/products/'+id);
+            $("#name").val(result.labe);
+            $("#photo_p").val(result.photo);
+            $("#description_p").val(result.description);
+            $("#price_p").val(result.price);
+            $("#product_id").val(result.id);
+        },
+        error: function(result,status,error) {
+        },
+
+    });
+
+}
+function updateProduct()
+{
+    let id=$('#product_id').val();
+   
+                $("#form_product_update").submit();
+                var data = $("#form_product_update").serialize();
          
 }
