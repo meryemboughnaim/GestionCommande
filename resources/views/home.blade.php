@@ -254,6 +254,9 @@ img {
 	          <li>
               <a href="{{url('/profil.profil')}}">Profil</a>
 	          </li>
+            <li>
+              <a href="{{url('/profil.profil')}}">Profil</a>
+	          </li>
 	        </ul>
 
 	        <div class="footer">
