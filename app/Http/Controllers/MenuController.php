@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -14,7 +14,8 @@ class MenuController extends Controller
     public function index()
     {
         //
-        return view('menu/menu');
+        $product = Product::all();
+        return view('menu/menu',compact('product'));
     }
 
     /**

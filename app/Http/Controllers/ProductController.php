@@ -107,12 +107,26 @@ class ProductController extends Controller
     {
         //
         $user = Product::findOrfail($id);
-        $user->update([
-            'labe'  =>  $request->name_p,
-            'description'  =>  $request->description_p,
-            'price'  =>  $request->price_p,
-        ]);
-        return  redirect()->route('products.index');
+        if($request->photo_p){
+           
+            $imageName = time().'.'.$request->photo_p->extension();
+            $request->photo_p->move(public_path('assets/images'),$imageName);
+            $user->update([
+                'labe'=>$request->name_p,
+                'description'=>$request->description_p,
+                'price'=>$request->price_p,
+                'photo'=>$imageName
+            ]);
+            }
+            else{
+                Product::create([
+                    'labe'=>$request->name_p,
+                    'description'=>$request->description_p,
+                    'price'=>$request->price_p
+                ]);
+            }
+        return redirect()->route('products.index');
+       
 
     }
 

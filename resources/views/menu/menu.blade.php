@@ -35,89 +35,21 @@
                     </ul>
                         <div class="tab-pane active" id="profile">
                             <div class="row">
+                                @foreach($product as $pro)
                                 <div class="col-sm-4">
                                     <div class="gal-detail thumb">
-                                        <a href="#" class="image-popup" title="Screenshot-2">
-                                            <img src="https://via.placeholder.com/400x300/008B8B/00000" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-                                        <h4 class="text-center">Gallary Image</h4>
+                                        
+                                            <img src="/assets/images/{{$pro->photo}}" class="thumb-img" alt="work-thumbnail">
+                                        
+                                        <h4 class="text-center">{{$pro->labe}}</h4>
                                         <div class="ga-border"></div>
-                                        <p class="text-muted text-center"><small>Photography</small></p>
+                                        <p class=" text-center">{{$pro->price}} DH</p>
                                         <div class="text-center">
                                                 <button type="button" class="btn btn-info"><i class="fa fa-shopping-cart"></i> Ajouter au panier </button>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-sm-4">
-                                    <div class="gal-detail thumb">
-                                        <a href="#" class="image-popup" title="Screenshot-2">
-                                            <img src="https://via.placeholder.com/400x300/FF7F50/00000" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-                                        <h4 class="text-center">Gallary Image</h4>
-                                        <div class="ga-border"></div>
-                                        <p class="text-muted text-center"><small>Photography</small></p>
-                                        <div class="text-center">
-                                                <button type="button" class="btn btn-info"><i class="fa fa-shopping-cart"></i> Ajouter au panier </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="gal-detail thumb">
-                                        <a href="#" class="image-popup" title="Screenshot-2">
-                                            <img src="https://via.placeholder.com/400x300/6495ED/00000" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-                                        <h4 class="text-center">Gallary Image</h4>
-                                        <div class="ga-border"></div>
-                                        <p class="text-muted text-center"><small>Photography</small></p>
-                                        <div class="text-center">
-                                                <button type="button" class="btn btn-info"><i class="fa fa-shopping-cart"></i> Ajouter au panier </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="gal-detail thumb">
-                                        <a href="#" class="image-popup" title="Screenshot-2">
-                                            <img src="https://via.placeholder.com/400x300/4169E1/00000" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-                                        <h4 class="text-center">Gallary Image</h4>
-                                        <div class="ga-border"></div>
-                                        <p class="text-muted text-center"><small>Photography</small></p>
-                                        <div class="text-center">
-                                                <button type="button" class="btn btn-info"><i class="fa fa-shopping-cart"></i> Ajouter au panier </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="gal-detail thumb">
-                                        <a href="#" class="image-popup" title="Screenshot-2">
-                                            <img src="https://via.placeholder.com/400x300/B0E0E6/00000" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-                                        <h4 class="text-center">Gallary Image</h4>
-                                        <div class="ga-border"></div>
-                                        <p class="text-muted text-center"><small>Photography</small></p>
-                                        <div class="text-center">
-                                                <button type="button" class="btn btn-info"><i class="fa fa-shopping-cart"></i> Ajouter au panier </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4">
-                                    <div class="gal-detail thumb">
-                                        <a href="#" class="image-popup" title="Screenshot-2">
-                                            <img src="https://via.placeholder.com/400x300/4169E1/00000" class="thumb-img" alt="work-thumbnail">
-                                        </a>
-                                        <h4 class="text-center">Gallary Image</h4>
-                                        <div class="ga-border"></div>
-                                        <p class="text-muted text-center"><small>Photography</small></p>
-                                        <div class="text-center">
-                                                <button type="button" class="btn btn-info"><i class="fa fa-shopping-cart"></i> Ajouter au panier </button>
-                                        </div>
-                                    </div>
-                                </div>
+                               @endforeach
                             </div>
                         </div>
                         

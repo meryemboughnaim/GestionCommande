@@ -9,8 +9,8 @@
 <div class="text-center card-box">
   <div class="row">
     <div class="col-lg-4">
-    <div class="thumb-xl member-thumb m-b-8 center-block" class="w-25">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png"  class="img-circle img-thumbnail " alt="profile-image">
+    <div class="thumb-xl member-thumb m-b-8 center-block" class="w-25 h-25">
+                        <img src="/assets/images/{{$user->photo}}"  class="img-circle img-thumbnail " alt="profile-image">
     </div>
     <div class="">
     <h4 class="m-b-6">{{$user->name}}</h4>

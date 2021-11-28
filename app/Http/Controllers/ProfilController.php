@@ -93,28 +93,27 @@ class ProfilController extends Controller
     {
         //
         DB::beginTransaction();
-            // $Category = User::findOrfail($id);
-            // if ($request->image){
-            //     $request->validate([
-            //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            //     ]);
-            //     $imageName = time().'.'.$request->image->extension();
-            //     $request->image->move(public_path('images'), $imageName);
-            //     $Category->update([
-            //         'name'  =>  $request->name,
-            //         'image' =>  $imageName,
-            //     ]);
-        //    DB::commit();/
-                // return redirect()->route('categories.index');
-            // }
-            // else{
+           
                 $user = User::findOrfail($id);
+                if($request->photo){
+                    
+            $imageName = time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('assets/images'),$imageName);
                 $user->update([
                     'name'  =>  $request->name,
                     'email'  =>  $request->email,
                     'phone'  =>  $request->phone,
+                    'photo' =>$imageName,
                     'adresse'  =>  $request->adresse,
-                ]);
+                ]);}
+                else{
+                    $user->update([
+                        'name'  =>  $request->name,
+                        'email'  =>  $request->email,
+                        'phone'  =>  $request->phone,
+                        'adresse'  =>  $request->adresse,
+                    ]);
+                }
                 DB::commit();
             // }
             $response['status']     = 'success';
