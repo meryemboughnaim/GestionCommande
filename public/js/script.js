@@ -46,10 +46,12 @@ function editProduct(id)
             $("#productedit").modal("show");
             $("#form_product_update").attr('action', '/products/'+id);
             $("#name").val(result.labe);
-            $("#photo_p").val(result.photo);
-            $("#description_p").val(result.description);
+            $("#descriptionp").val(result.description);
             $("#price_p").val(result.price);
             $("#product_id").val(result.id);
+            // $("#photo_p").val(result.photo);
+            
+            
         },
         error: function(result,status,error) {
         },

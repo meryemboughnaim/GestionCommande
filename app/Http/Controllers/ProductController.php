@@ -39,7 +39,7 @@ class ProductController extends Controller
         //
 
         if($request->photo){
-           
+
             $imageName = time().'.'.$request->photo->extension();
             $request->photo->move(public_path('assets/images'),$imageName);
             Product::create([
@@ -56,7 +56,7 @@ class ProductController extends Controller
                     'price'=>$request->price
                 ]);
             }
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('msg','Product Added successfuly');
     }
 
     /**
@@ -69,7 +69,7 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
-      
+
         return view('products.view',compact('product'));
     }
 
@@ -85,7 +85,9 @@ class ProductController extends Controller
         try{
             DB::beginTransaction();
             $product = Product::findOrfail($id);
+            
             DB::commit();
+           
             return response()->json($product, 200);
         }catch (\Exception $e){
             DB::rollBack();
@@ -108,7 +110,7 @@ class ProductController extends Controller
         //
         $user = Product::findOrfail($id);
         if($request->photo_p){
-           
+
             $imageName = time().'.'.$request->photo_p->extension();
             $request->photo_p->move(public_path('assets/images'),$imageName);
             $user->update([
@@ -119,14 +121,14 @@ class ProductController extends Controller
             ]);
             }
             else{
-                Product::create([
+                $user->update([
                     'labe'=>$request->name_p,
                     'description'=>$request->description_p,
                     'price'=>$request->price_p
                 ]);
             }
-        return redirect()->route('products.index');
-       
+        return redirect()->route('products.index')->with('msg','Product updated successfuly');
+
 
     }
 
