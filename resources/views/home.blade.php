@@ -224,6 +224,7 @@
 img {
   border-radius: 30%;
 }
+
       </style>
   </head>
   <body>
