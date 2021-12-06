@@ -10,7 +10,39 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
     <style>
+    .nameuser{
+      
+    }
     
+    .editImage {
+    position: absolute;
+    bottom: -0px;
+    right: 10px;
+    background: orange;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-size: 1.8rem;
+    width: 54px;
+    height: 54px;
+   
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    
+}
+.nav.nav-tabs + .tab-content {
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.progress.progress-sm .progress-bar {
+    font-size: 8px;
+    line-height: 5px;
+}
+img {
+  border-radius: 30%;
+}
 
       </style>
   </head>

@@ -11,15 +11,17 @@
     <div class="col-lg-4">
     <div class="thumb-xl member-thumb m-b-8 center-block" class="w-25 h-25">
                         <img src="/assets/images/{{$user->photo}}"  class="img-circle img-thumbnail " alt="profile-image">
+                        <a href="#" title="#" class="editImage">
+						<i class="fa fa-camera"></i>
+					</a>
+         
     </div>
-    <div class="">
-    <h4 class="m-b-6">{{$user->name}}</h4>
   
-</div>
-    </div>
+  </div>
+
     <div class="col-lg-6">
     <div class="text-Left pt-5 ">
-                        <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15">{{$user->name}}</span></p>
+                        <p class="text-muted font-13"><strong>Full Name :</strong> <span class="m-l-15"> {{$user->name}}</span></p>
                         <p class="text-muted font-13"><strong>Mobile :</strong><span class="m-l-15">{{$user->phone}}</span></p>
                         <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{$user->email}}</span></p>
                         <p class="text-muted font-13"><strong>Adresse :</strong> <span class="m-l-15">{{$user->adresse}}</span></p>
