@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use SebastianBergmann\Environment\Console;
+
 class ProductController extends Controller
 {
     /**
@@ -11,12 +13,26 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $products= Product::all();
+        
+       if($request->product_name_s && $request->price_s){
+      $products= Product::where(['labe'=>$request->product_name_s,'price'=>$request->price_s])->get();
+        
+       }
+       elseif($request->product_name_s){
+        $products= Product::where('labe',$request->product_name_s)->get();
+       }
+       elseif($request->price_s){
+        $products= Product::where('price',$request->price_s)->get();
+       }
+       else{
+       $products= Product::all();
+       }
         return view("products.products",compact("products"));
     }
+  
 
     /**
      * Show the form for creating a new resource.
@@ -37,9 +53,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-
+        // $request->validate([
+        //     'labe' => 'required|string',
+        //     'price' => 'required',
+        // ]);
+       
         if($request->photo){
-
+           
             $imageName = time().'.'.$request->photo->extension();
             $request->photo->move(public_path('assets/images'),$imageName);
             Product::create([
@@ -50,6 +70,7 @@ class ProductController extends Controller
             ]);
             }
             else{
+             
                 Product::create([
                     'labe'=>$request->labe,
                     'description'=>$request->description,
@@ -107,13 +128,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $user = Product::findOrfail($id);
+        
+        $product = Product::findOrfail($id);
         if($request->photo_p){
 
             $imageName = time().'.'.$request->photo_p->extension();
             $request->photo_p->move(public_path('assets/images'),$imageName);
-            $user->update([
+            $product->update([
                 'labe'=>$request->name_p,
                 'description'=>$request->description_p,
                 'price'=>$request->price_p,
@@ -121,7 +142,7 @@ class ProductController extends Controller
             ]);
             }
             else{
-                $user->update([
+                $product->update([
                     'labe'=>$request->name_p,
                     'description'=>$request->description_p,
                     'price'=>$request->price_p

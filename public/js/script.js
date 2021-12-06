@@ -45,10 +45,11 @@ function editProduct(id)
         success: function(result,status) {
             $("#productedit").modal("show");
             $("#form_product_update").attr('action', '/products/'+id);
+            $("#product_id").val(result.id);
             $("#name").val(result.labe);
             $("#descriptionp").val(result.description);
             $("#price_p").val(result.price);
-            $("#product_id").val(result.id);
+           
             // $("#photo_p").val(result.photo);
             
             
@@ -61,9 +62,9 @@ function editProduct(id)
 }
 function updateProduct()
 {
-    let id=$('#product_id').val();
-   
-                $("#form_product_update").submit();
+    
+   let id=$('#product_id').val();
+                 $("#form_product_update").submit();
                 var data = $("#form_product_update").serialize();
-         
+                
 }

@@ -120,12 +120,22 @@
           </div>
         </nav>
         @yield('content')
-       
-      </div>
+        <!-- <div class="row">
+          <div class="col-sm-2">
+          </div>
+          <div class="col-sm-8">
+        <div class="alert alert-secondary" role="alert">
+  Welcome to your app <strong>{{Auth()->user()->name}}</strong> .
+</div>
+          </div>
+          <div class="col-sm-2">
+          </div>
+      </div> -->
+
 		</div>
   
     
-    
+   
     
     <script src="{{url('assets/js/jquery.min.js')}}"></script>
     <script src="{{url('assets/js/popper.js')}}"></script>

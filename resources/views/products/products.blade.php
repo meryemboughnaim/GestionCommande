@@ -27,7 +27,15 @@
       <form action="{{url('products')}}" method="POST"  enctype="multipart/form-data">
         @csrf
       <div class="modal-body">
-
+      @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
   <div class="form-group">
     <label for="exampleInputEmail1">Product name :</label>
     <input type="text" class="form-control" name="labe" id="label"  placeholder="Enter product name">
@@ -60,22 +68,35 @@
 <!-- end add product -->
 <!-- search -->
 <div class="ibox-content m-b-sm border-bottom">
+<form action="{{route('products.index')}}" method="GET">
+  @csrf
+  
                 <div class="row">
+                
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label class="col-form-label" for="product_name">Product Name</label>
-                            <input type="text" id="product_name" name="product_name" value="" placeholder="Product Name" class="form-control">
+                            <input type="text" id="product_name_s" value="{{ request()->has('product_name_s') ? request()->get('product_name_s') : '' }}" name="product_name_s"  placeholder="Product Name" class="form-control">
                         </div>
                     </div>
 
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label class="col-form-label" for="quantity">Price</label>
-                            <input type="text" id="quantity" name="quantity" value="" placeholder="Quantity" class="form-control">
+                            <input type="text" id="price_s" name="price_s" value="{{ request()->has('price_s') ? request()->get('price_s') : '' }}"  placeholder="Price" class="form-control">
                         </div>
                     </div>
-
+                    <div class="col-sm-6">
+                    <div class="text-right">
+                      
+                           <br>
+                           <button type="submit" class="btn btn-outline-secondary" >search</button>
+                           
+                           </div>
+                    </div>
+                    
                 </div>
+                <form>
                 <!-- end search -->
                 <!-- affichage -->
                 <div class="row">
@@ -98,12 +119,16 @@
                                 </thead>
                                 <tbody>
                                 @foreach($products as $item)
-                                <tr class="footable-even" style="">
+                                <tr class="footable-even" >
                                     <td class="footable-visible footable-first-column"><span class="footable-toggle"></span>
                                       {{$item->labe}}
                                     </td>
-                                    <td class="footable-visible">
-                                        {{$item->description}}
+                                    <td class="" >
+                                     <div style="width:250px;overflow:auto ">
+                                     
+                                    {{$item->description}}
+                                     
+                                     </div>
                                     </td>
 
                                     <td class="footable-visible">
@@ -135,7 +160,7 @@
         @method('PUT')
         @csrf
       <div class="modal-body">
-
+    
   <div class="form-group">
   <input type="hidden"  name="id" id="product_id">
     <label for="exampleInputEmail1">Product name :</label>
