@@ -64,10 +64,10 @@ img {
 	          <li  class="@if(route('commande.index') == Request::url()) active @endif">
 	              <a href="{{url('/commande')}}">Commande</a>
 	          </li>
-	          <li  class="@if(route('panier.index') == Request::url()) active @endif">
+	          <!-- <li  class="@if(route('panier.index') == Request::url()) active @endif">
               <a href="{{url('/panier')}}"  >Panier</a>
              
-	          </li>
+	          </li> -->
 	          <li  class="@if(route('menu.index') == Request::url()) active @endif">
               <a href="{{url('/menu')}}">Menu</a>
 	          </li>

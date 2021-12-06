@@ -10,11 +10,11 @@
   <div class="row">
     <div class="col-lg-4">
     <div class="thumb-xl member-thumb m-b-8 center-block" class="w-25 h-25">
-                        <img src="/assets/images/{{$user->photo}}"  class="img-circle img-thumbnail " alt="profile-image">
-                        <a href="#" title="#" class="editImage">
-						<i class="fa fa-camera"></i>
-					</a>
-         
+      @if($user->photo)
+      <img src="/assets/images/{{$user->photo}}"  class="img-circle img-thumbnail " alt="profile-image">
+            @else
+            <img src="/assets/images/R.jpg"  class="img-circle img-thumbnail " alt="profile-image">
+            @endif
     </div>
   
   </div>

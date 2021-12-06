@@ -12,21 +12,21 @@
     @endif
 <div class="text-right">
 
-<button class="btn btn-outline-primary" data-toggle="modal" data-target="#productadd"  >Ajouter</button>
+ <button class="btn btn-outline-primary" data-toggle="modal" data-target="#productadd"  >Ajouter</button>
 </div>
 <!-- add product -->
 <div class="modal fade" id="productadd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-content">
+       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <form action="{{url('products')}}" method="POST"  enctype="multipart/form-data">
+       </div>
+       <form action="{{url('products')}}" method="POST"  enctype="multipart/form-data">
         @csrf
-      <div class="modal-body">
+  <div class="modal-body">
       @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -35,40 +35,38 @@
             @endforeach
         </ul>
     </div>
-@endif
-  <div class="form-group">
-    <label for="exampleInputEmail1">Product name :</label>
-    <input type="text" class="form-control" name="labe" id="label"  placeholder="Enter product name">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Picture</label>
-    <input type="file" class="form-control-file" name="photo" id="photo">
+      @endif
+    <div class="form-group">
+      <label for="exampleInputEmail1">Product name :</label>
+      <input type="text" class="form-control" name="labe" id="label"  placeholder="Enter product name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Picture</label>
+      <input type="file" class="form-control-file" name="photo" id="photo">
+    </div>
+
+    <div class="form-group">
+     <label for="exampleInputEmail1">Description</label>
+     <textarea  class="form-control" id="description" name="description" placeholder="Enter description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Price</label>
+      <input type="number" class="form-control" id="price" name="price"  placeholder="Enter price">
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Description</label>
-    <textarea  class="form-control" id="description" name="description" placeholder="Enter description"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Price</label>
-    <input type="number" class="form-control" id="price" name="price"  placeholder="Enter price">
-  </div>
-
-
-
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit"  class="btn btn-primary">Add</button>
       </div>
-      </form>
-    </div>
+      </form> 
+      </div>
   </div>
 </div>
 <!-- end add product -->
 <!-- search -->
 <div class="ibox-content m-b-sm border-bottom">
-<form action="{{route('products.index')}}" method="GET">
+ <form action="{{route('products.index')}}" method="GET">
   @csrf
   
                 <div class="row">
@@ -86,20 +84,20 @@
                             <input type="text" id="price_s" name="price_s" value="{{ request()->has('price_s') ? request()->get('price_s') : '' }}"  placeholder="Price" class="form-control">
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                   <div class="col-sm-6">
                     <div class="text-right">
                       
                            <br>
                            <button type="submit" class="btn btn-outline-secondary" >search</button>
                            
-                           </div>
                     </div>
+                   </div>
                     
                 </div>
-                <form>
+
                 <!-- end search -->
                 <!-- affichage -->
-                <div class="row">
+              <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox">
                         <div class="ibox-content">
@@ -115,7 +113,6 @@
                                     <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">Action</th>
 
                                 </tr>
-
                                 </thead>
                                 <tbody>
                                 @foreach($products as $item)
@@ -144,11 +141,20 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                                </tbody>
+
+                            </table>
+                        </div>
+                     </div>
+                </div>
+              </div>
+ </form>
+</div>           
 
                                 <!-- end affichage -->
                                 <!-- edit product -->
-        <div class="modal fade" id="productedit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+<div class="modal fade" id="productedit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Edit Product</h5>
@@ -156,21 +162,20 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="" method="POST" id="form_product_update" enctype="multipart/form-data">
+ <form action="" method="POST" id="form_product_update" enctype="multipart/form-data">
         @method('PUT')
         @csrf
-      <div class="modal-body">
-    
+ <div class="modal-body">
+
   <div class="form-group">
-  <input type="hidden"  name="id" id="product_id">
-    <label for="exampleInputEmail1">Product name :</label>
-    <input type="text" class="form-control" id="name" name="name_p"  placeholder="Enter product name">
+  <input type="hidden"  name="id" id="product_id"/>
+  <label for="name">Product name :</label>
+ <input type="text" class="form-control" id="name" name="name_p"  placeholder="Enter product name"/>
   </div>
   <div class="form-group">
     <label for="exampleFormControlFile1">Picture</label>
     <input type="file" class="form-control-file" id="photo_p" name="photo_p">
   </div>
-
   <div class="form-group">
     <label for="exampleInputEmail1">Description</label>
     <textarea  class="form-control" id="descriptionp" name="description_p"  placeholder="Enter description"></textarea>
@@ -179,9 +184,6 @@
     <label for="exampleInputEmail1">Price</label>
     <input type="number" class="form-control" id="price_p" name="price_p"  placeholder="Enter price">
   </div>
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -193,20 +195,7 @@
 </div>
 <!-- end edit product -->
 
-
-                                </tbody>
-                                <tfoot>
-                                <tr>
-
-                                </tr>
-                                </tfoot>
-                            </table>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+ 
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"
  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
