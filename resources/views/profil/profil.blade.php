@@ -13,7 +13,7 @@
       @if($user->photo)
       <img src="/assets/images/{{$user->photo}}"  class="img-circle img-thumbnail " alt="profile-image">
             @else
-            <img src="/assets/images/R.jpg"  class="img-circle img-thumbnail " alt="profile-image">
+            <img src="/assets/images/Ra.png"  class="img-circle img-thumbnail " alt="profile-image">
             @endif
     </div>
   

@@ -22,7 +22,7 @@ Route::resource('/profil', ProfilController::class);
 Route::resource('/products', ProductController::class);
 Route::resource('/commande', CommandeController::class);
 Route::get('/home', function () {
-    return view('home');
+    return view('welcome');
 });
 // Route::get('/products.view', function () {
 //     return view('products.view');
