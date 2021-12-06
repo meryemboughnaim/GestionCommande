@@ -15,6 +15,9 @@
             @else
             <img src="/assets/images/R.jpg"  class="img-circle img-thumbnail " alt="profile-image">
             @endif
+            <a href="#" title="#" class="editImage">
+						<i class="fa fa-camera"></i>
+					</a>
     </div>
   
   </div>
