@@ -15,7 +15,6 @@
                                     <h2 class="font-bold m-b-xs">
                                        {{$product->labe}}
                                     </h2>
-                                    <small>Many desktop publishing packages and web page editors now.</small>
                                     <div class="m-t-md">
                                         <h2 class="product-main-price">{{$product->price}} &nbsp;<code>DH</code> </h2>
                                     </div>
@@ -31,7 +30,6 @@
                                     <div>
                                         <div class="btn-group">
                                             <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</button>
-                                            <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
                                         </div>
                                     </div>
 
