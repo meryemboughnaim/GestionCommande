@@ -137,7 +137,9 @@
                                     <td class="text-right footable-visible footable-last-column">
                                         <div class="btn-group">
                                             <a href="products/{{$item->id}}" class="btn btn-primary btn-xs">View</a>
+                                            
                                             <a class="btn btn-outline-secondary btn-xs" href="javascript:editProduct({{$item->id}})"  >Edit</a>
+                                            <a class="btn btn-danger btn-xs" href=""  >Supprimer</a>
                                         </div>
                                     </td>
                                 </tr>
