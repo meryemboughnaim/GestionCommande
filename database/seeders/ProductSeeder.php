@@ -27,19 +27,19 @@ class ProductSeeder extends Seeder
             'labe' => 'Burger King',
             'photo' => 'OIP.jpg',
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'price' => '55',
+            'price' => '65',
         ]);
         DB::table('products')->insert([
             'labe' => 'Tacos',
             'photo' =>'1638359798.jpg',
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'price' => '55',
+            'price' => '35',
         ]);
         DB::table('products')->insert([
             'labe' => 'Salade',
             'photo' => 'R.jpg',
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'price' => '55',
+            'price' => '45',
         ]);
   
     }
