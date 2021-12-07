@@ -9,7 +9,6 @@
 
            <th data-toggle="true" class="footable-visible footable-first-column footable-sortable">Order<span class="footable-sort-indicator"></span></th>
             <th data-hide="all" class="footable-sortable">Description<span class="footable-sort-indicator"></span></th>
-             <th data-hide="phone" class="footable-visible footable-sortable">Date<span class="footable-sort-indicator"></span></th>
             <th data-hide="phone" class="footable-visible footable-sortable">Product<span class="footable-sort-indicator"></span></th>
             <th data-hide="phone" class="footable-visible footable-sortable">User<span class="footable-sort-indicator"></span></th>
 
@@ -27,9 +26,7 @@
                 {{$ord->description}}                  
                 </td>
                                    
-                <td class="footable-visible">
-                {{$ord->date_order}}        
-                 </td>
+               
                   <td class="footable-visible">
                   {{$ord->product_id}}      
                  </td>

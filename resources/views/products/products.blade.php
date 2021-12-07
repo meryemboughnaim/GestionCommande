@@ -139,7 +139,12 @@
                                             <a href="products/{{$item->id}}" class="btn btn-primary btn-xs">View</a>
                                             
                                             <a class="btn btn-outline-secondary btn-xs" href="javascript:editProduct({{$item->id}})"  >Edit</a>
-                                            <a class="btn btn-danger btn-xs" href=""  >Supprimer</a>
+                                            <form action="{{ route('products.destroy', $item->id)}}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+            
+                                            <button type="submit"  class="btn btn-outline-danger btn-xs" >Delete</button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

@@ -16,22 +16,22 @@ class OrderSeeder extends Seeder
         //
         DB::table('orders')->insert([
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'product_id' => '96',
+            'product_id' => '1',
             'user_id' => '1',
         ]);
         DB::table('orders')->insert([
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'product_id' => '95',
+            'product_id' => '2',
             'user_id' => '1',
         ]);
         DB::table('orders')->insert([
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'product_id' => '94',
+            'product_id' => '2',
             'user_id' => '1',
         ]);
         DB::table('orders')->insert([
             'description' => 'Sauce Tomate - Crevette - Fromage Rouge/Mozarelle',
-            'product_id' => '93',
+            'product_id' => '1',
             'user_id' => '1',
         ]);
     }

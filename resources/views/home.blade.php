@@ -9,47 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{url('assets/css/style.css')}}">
-    <style>
-    .editImage {
-    position: absolute;
-    bottom: -0px;
-    right: 10px;
-    background: orange;
-    color: #fff;
-    text-align: center;
-    font-size: 18px;
-    font-size: 1.8rem;
-    width: 54px;
-    height: 54px;
-   
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    
-}
-.nav.nav-tabs + .tab-content {
-    background: #ffffff;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-.progress.progress-sm .progress-bar {
-    font-size: 8px;
-    line-height: 5px;
-}
-#slider{
   
-}
-
-
-      </style>
+  
   </head>
   <body>
-		
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
-				<div class="p-4 pt-5 mb-5 ">
-          <img  src="{{ URL::to('/assets/logo-GestionCommande.jpg')  }}"  >
-
+				<div class="p-4 pt-5">
+          <img class="img logo rounded-circle mb-5"  src="{{ URL::to('/assets/logo-GestionCommande.jpg')  }}"  >
+        
 	        <ul class="list-unstyled components mb-5">
 	          <li   class="@if(route('home') == Request::url()) active @endif"  >
 	            <a href="{{url('/')}}"  >Home</a>
@@ -149,35 +117,8 @@
           </div>
         </nav>
         @yield('content')
-        <div id="" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="/assets/images/slider1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/assets/images/slider2.jpg" alt="Second slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-        <!-- <div class="row">
-          <div class="col-sm-2">
-          </div>
-          <div class="col-sm-8">
-        <div class="alert alert-secondary" role="alert">
-  Welcome to your app <strong>{{Auth()->user()->name}}</strong> .
-</div>
-          </div>
-          <div class="col-sm-2">
-          </div>
-      </div> -->
+       
+  
 
 		</div>
   

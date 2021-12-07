@@ -36,11 +36,10 @@
                         <div class="tab-pane active" id="profile">
                             <div class="row">
                                 @foreach($product as $pro)
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 mt-5" >
                                     <div class="gal-detail thumb">
-                                        
-                                            <img src="/assets/images/{{$pro->photo}}" class="thumb-img" alt="work-thumbnail">
-                                        
+                                            <img style="width: 100%; height:200px;" src="/assets/images/{{$pro->photo}}" class="thumb-img rounded" alt="work-thumbnail">
+                                            
                                         <h4 class="text-center">{{$pro->labe}}</h4>
                                         <div class="ga-border"></div>
                                         <p class=" text-center">{{$pro->price}} DH</p>
@@ -52,7 +51,6 @@
                                @endforeach
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
